@@ -13,22 +13,18 @@ function ListAllProductDetails({ product }) {
       category: product.category,
       quantity: quantity + 1,
     }
-    const response = await fetch(
-      process.env.REACT_APP_BACKEND_URL +
-        id,
-      {
-        method: 'put',
-        body: JSON.stringify(newProduct),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    )
+    const response = await fetch(process.env.REACT_APP_BACKEND_URL + id, {
+      method: 'put',
+      body: JSON.stringify(newProduct),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
     const json = await response.json()
 
     if (!response.ok) {
       setError(json.error)
-      console.log(error);
+      console.log(error)
     }
     if (response.ok) {
       setError(null)
@@ -42,17 +38,13 @@ function ListAllProductDetails({ product }) {
       category: product.category,
       quantity: quantity - 1,
     }
-    const response = await fetch(
-      process.env.REACT_APP_BACKEND_URL +
-        id,
-      {
-        method: 'put',
-        body: JSON.stringify(newProduct),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    )
+    const response = await fetch(process.env.REACT_APP_BACKEND_URL + id, {
+      method: 'put',
+      body: JSON.stringify(newProduct),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
     const json = await response.json()
 
     if (!response.ok) {
@@ -67,9 +59,7 @@ function ListAllProductDetails({ product }) {
 
   return (
     <div className='product-details'>
-      <h4>
-        {product.title}
-      </h4>
+      <p className='product-details-title'>{product.title}</p>
       <p>
         {quantity} <button onClick={increment}>+</button>{' '}
         <button onClick={decrement}>-</button>

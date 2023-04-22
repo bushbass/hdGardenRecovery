@@ -17,7 +17,7 @@ function ProductDetails({ product }) {
     }
   }
   return (
-    <div className='product-details'>
+    <div className='product-details edit-page'>
       <h4>{product.title}</h4>
       <p>Category {product.category}</p>
     <p>Quantity {product.quantity}</p>

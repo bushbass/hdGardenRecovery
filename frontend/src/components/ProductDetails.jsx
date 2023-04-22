@@ -7,8 +7,7 @@ function ProductDetails({ product }) {
 
   const handleClick = async () => {
     const response = await fetch(
-      process.env.REACT_APP_BACKEND_URL +
-        product._id,
+      process.env.REACT_APP_BACKEND_URL + product._id,
       { method: 'DELETE' }
     )
     const json = await response.json()
@@ -20,14 +19,16 @@ function ProductDetails({ product }) {
     <div className='product-details edit-page'>
       <h4>{product.title}</h4>
       <p>Category {product.category}</p>
-    <p>Quantity {product.quantity}</p>
-      <div className='material-symbols-outlined' onClick={handleClick}>
+      <p>Quantity {product.quantity}</p>
+      <p className='material-symbols-outlined delete-button' onClick={handleClick}>
         delete
-      </div>
+      </p>
       <br />
-      <div className='material-symbols-outlined'>
-        <Link to='/edit/' state={{id:product._id}}>edit</Link>
-      </div>
+      <p className='material-symbols-outlined edit-button'>
+        <Link to='/edit/' state={{ id: product._id }}>
+          edit
+        </Link>
+      </p>
     </div>
   )
 }

@@ -24,7 +24,7 @@ function ListAll() {
   }, [dispatch])
 
   return (
-    <div className='listAll'>
+    <div className='list-all'>
       <div className='products'>
         {products &&
           products.map((product) => (

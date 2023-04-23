@@ -17,9 +17,9 @@ function ProductDetails({ product }) {
   }
   return (
     <div className='product-details edit-page'>
-      <h4>{product.title}</h4>
-      <p>Category {product.category}</p>
-      <p>Quantity {product.quantity}</p>
+      <p>{product.title}</p>
+      <p className='product-details-properties'>Category {product.category}</p>
+      <p className='product-details-properties'>Quantity {product.quantity}</p>
       <p className='material-symbols-outlined delete-button' onClick={handleClick}>
         delete
       </p>

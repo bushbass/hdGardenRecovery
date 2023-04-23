@@ -60,7 +60,7 @@ function ListAllProductDetails({ product }) {
   return (
     <div className='product-details'>
       <p className='product-details-title'>{product.title}</p>
-      <p>
+      <p className='product-details-properties'>
         {quantity} <button onClick={increment}>+</button>{' '}
         <button onClick={decrement}>-</button>
       </p>

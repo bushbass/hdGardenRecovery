@@ -64,14 +64,16 @@ header a {
 .product-details p {
   margin: 0;
   font-size: 1.1em;
-  color: #555;
+  color: var(--primary);
 }
 .product-details .product-details-title {
   margin: 0 10px 0 0;
   font-size: 1.1em;
   color: var(--primary);
 }
-
+.product-details .product-details-properties {
+  color: #555;
+}
 .product-details p button {
   width: 40px;
   height: 40px;

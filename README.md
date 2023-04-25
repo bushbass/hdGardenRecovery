@@ -7,7 +7,7 @@ A single page React app to help with garden recovery at the big box hardware sto
 
 I will be adding user authentication next so it can be used by other associates in other stores.
 
-Skills: HTML | CSS | JavaScript | React | Local Storage
+Skills: HTML | CSS | JavaScript | React
 Hosted on Netlify
 
 # how to run this app locally

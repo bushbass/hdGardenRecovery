@@ -1,0 +1,4 @@
+better desktop view
+404 for url hacking on /edit
+dissallow negative count
+set all items to zero button

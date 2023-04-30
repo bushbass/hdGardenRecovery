@@ -12,8 +12,8 @@ function App() {
         <div className='pages'>
           <Routes>
             <Route path='/' element={<ListAll />}></Route>
-            <Route path='/edit' element={<Edit />}></Route>
             <Route path='/list' element={<AddEditProducts />}></Route>
+            <Route path='/edit' element={<Edit />}></Route>
           </Routes>
         </div>
       </BrowserRouter>

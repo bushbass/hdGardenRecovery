@@ -7,6 +7,7 @@ function ListAll() {
 
   const [loading, setLoading] = useState(true)
 
+  const [filteredProducts, setFilteredProducts] = useState(products)
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(process.env.REACT_APP_BACKEND_URL)
@@ -22,6 +23,30 @@ function ListAll() {
     fetchProducts()
   }, [dispatch])
 
+  const filterSoil = () => {
+    let newProducts = products.filter(
+      (product) => product.category.toLowerCase() == 'soil'
+    )
+    setFilteredProducts(newProducts)
+  }
+  const filterMulch = () => {
+    let newProducts = products.filter(
+      (product) => product.category.toLowerCase() == 'mulch'
+    )
+    setFilteredProducts(newProducts)
+  }
+  const filterStone = () => {
+    let newProducts = products.filter(
+      (product) => product.category.toLowerCase() == 'stone'
+    )
+    setFilteredProducts(newProducts)
+  }
+  const filterPavers = () => {
+    let newProducts = products.filter(
+      (product) => product.category.toLowerCase() == 'paver'
+    )
+    setFilteredProducts(newProducts)
+  }
   return (
     <div className='list-all'>
       {loading ? (
@@ -33,16 +58,29 @@ function ListAll() {
             If you're seeing this message, please wait a minute to let the
             server start up and then hit reload
           </h3>
-        </> 
+        </>
       ) : (
         <div className='products'>
-          {products &&
-            products.map((product) => (
+          <div className='sortingNav'>
+            <div onClick={filterSoil} className='categoryChoice'>
+              Soil
+            </div>
+            <div onClick={filterMulch} className='categoryChoice'>
+              Mulch
+            </div>
+            <div onClick={filterStone} className='categoryChoice'>
+              Stone
+            </div>
+            <div onClick={filterPavers} className='categoryChoice'>
+              Pavers
+            </div>
+          </div>
+          {filteredProducts &&
+            filteredProducts.map((product) => (
               <ListAllProductDetails key={product._id} product={product} />
             ))}
         </div>
       )}
-     
     </div>
   )
 }

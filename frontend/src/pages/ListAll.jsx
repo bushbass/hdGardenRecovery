@@ -23,30 +23,17 @@ function ListAll() {
     fetchProducts()
   }, [dispatch])
 
-  const filterSoil = () => {
+  const productFilter = (category) => {
+    if (category == 'all') {
+      setFilteredProducts(products)
+      return
+    }
     let newProducts = products.filter(
-      (product) => product.category.toLowerCase() == 'soil'
+      (product) => product.category.toLowerCase() == category
     )
     setFilteredProducts(newProducts)
   }
-  const filterMulch = () => {
-    let newProducts = products.filter(
-      (product) => product.category.toLowerCase() == 'mulch'
-    )
-    setFilteredProducts(newProducts)
-  }
-  const filterStone = () => {
-    let newProducts = products.filter(
-      (product) => product.category.toLowerCase() == 'stone'
-    )
-    setFilteredProducts(newProducts)
-  }
-  const filterPavers = () => {
-    let newProducts = products.filter(
-      (product) => product.category.toLowerCase() == 'paver'
-    )
-    setFilteredProducts(newProducts)
-  }
+
   return (
     <div className='list-all'>
       {loading ? (
@@ -62,16 +49,29 @@ function ListAll() {
       ) : (
         <div className='products'>
           <div className='sortingNav'>
-            <div onClick={filterSoil} className='categoryChoice'>
+            <div
+              onClick={() => productFilter('all')}
+              className='categoryChoice'>
+              All products
+            </div>
+            <div
+              onClick={() => productFilter('soil')}
+              className='categoryChoice'>
               Soil
             </div>
-            <div onClick={filterMulch} className='categoryChoice'>
+            <div
+              onClick={() => productFilter('mulch')}
+              className='categoryChoice'>
               Mulch
             </div>
-            <div onClick={filterStone} className='categoryChoice'>
+            <div
+              onClick={() => productFilter('stone')}
+              className='categoryChoice'>
               Stone
             </div>
-            <div onClick={filterPavers} className='categoryChoice'>
+            <div
+              onClick={() => productFilter('paver')}
+              className='categoryChoice'>
               Pavers
             </div>
           </div>

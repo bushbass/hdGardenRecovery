@@ -1,17 +1,15 @@
 import { useEffect } from 'react'
 import { useProductsContext } from '../hooks/useProductsContext'
+
 import ProductDetails from '../components/ProductDetails'
 import ProductForm from '../components/ProductForm'
 
-function AddEditProducts
-() {
+function AddEditProducts() {
   const { products, dispatch } = useProductsContext()
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch(
-        process.env.REACT_APP_BACKEND_URL
-      )
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL)
 
       const json = await response.json()
 
@@ -37,4 +35,3 @@ function AddEditProducts
 }
 
 export default AddEditProducts
-

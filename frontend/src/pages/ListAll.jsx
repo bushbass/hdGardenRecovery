@@ -24,12 +24,12 @@ function ListAll() {
   }, [dispatch])
 
   const productFilter = (category) => {
-    if (category == 'all') {
+    if (category === 'all') {
       setFilteredProducts(products)
       return
     }
     let newProducts = products.filter(
-      (product) => product.category.toLowerCase() == category
+      (product) => product.category.toLowerCase() === category
     )
     setFilteredProducts(newProducts)
   }

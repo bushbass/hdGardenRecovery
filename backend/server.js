@@ -7,9 +7,7 @@ const mongoose = require('mongoose')
 
 const cors = require('cors')
 
-app.use(
-  cors()
-)
+app.use(cors())
 
 // middleware
 
@@ -35,4 +33,4 @@ mongoose
     console.log(error)
   })
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 4000

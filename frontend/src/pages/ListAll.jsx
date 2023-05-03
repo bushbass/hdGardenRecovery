@@ -6,18 +6,18 @@ function ListAll() {
   const { products, dispatch } = useProductsContext()
 
   const [loading, setLoading] = useState(true)
-
   const [filteredProducts, setFilteredProducts] = useState(products)
+
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(process.env.REACT_APP_BACKEND_URL)
-
       const json = await response.json()
 
       if (response.ok) {
         dispatch({ type: 'SET_PRODUCTS', payload: json })
       }
       setLoading(false)
+      setFilteredProducts(json)
     }
 
     fetchProducts()

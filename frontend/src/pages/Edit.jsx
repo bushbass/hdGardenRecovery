@@ -58,6 +58,7 @@ function Edit() {
       setCategory('')
       setQuantity(null)
       setEmptyFields([])
+      console.log("payload from edit",json);
       dispatch({type:"UPDATE_PRODUCT", payload:json})
       navigate(`/`)
     }

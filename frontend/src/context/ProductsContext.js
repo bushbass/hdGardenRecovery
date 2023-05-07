@@ -20,13 +20,12 @@ export const productsReducer = (state, action) => {
       };
     case 'UPDATE_PRODUCT':
       return {
-        products: state.products.splice(
-          state.products.findIndex(
-            (product) => product._id === action.payload._id
-          ),
-          1,
-          action.payload
-        ),
+        products: state.products.map(product=>{
+          if(product._id === action.payload._id){
+            return action.payload
+          }
+          return product
+          })
       };
 
     default:

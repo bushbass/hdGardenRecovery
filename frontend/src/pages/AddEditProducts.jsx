@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { useProductsContext } from '../hooks/useProductsContext'
 
 import ProductDetails from '../components/ProductDetails'
-import ProductForm from '../components/ProductForm'
 
 function AddEditProducts() {
   const { products, dispatch } = useProductsContext()

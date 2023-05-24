@@ -7,7 +7,7 @@
   --error: #e7195a;
 }
 body {
-  background: #f1f1f1;
+  background: #cbcbcb;
   margin: 0;
   font-family: 'Poppins';
 }
@@ -28,15 +28,17 @@ header a {
 }
 .pages {
   max-width: 1400px;
-  padding: 20px;
+  padding: 8px;
   margin: 0 auto;
 }
 
 /* homepage */
 .home {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: 100px; */
+  display: flex;
+  gap: 10px;
 }
 .list-all {
   display: flex;
@@ -45,13 +47,16 @@ header a {
   display: flex;
   justify-content: space-between;
 }
+.products {
+  width: 90vw;
+}
 .product-details {
   background: #fff;
   border-radius: 4px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 10px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;

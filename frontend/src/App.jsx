@@ -3,6 +3,7 @@ import AddEditProducts from './pages/AddEditProducts'
 import Edit from './pages/Edit'
 import ListAll from './pages/ListAll'
 import Navbar from './components/Navbar'
+import AddProducts from './pages/AddProducts'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path='/' element={<ListAll />}></Route>
             <Route path='/list' element={<AddEditProducts />}></Route>
             <Route path='/edit' element={<Edit />}></Route>
+            <Route path='/add' element={<AddProducts />}></Route>
           </Routes>
         </div>
       </BrowserRouter>

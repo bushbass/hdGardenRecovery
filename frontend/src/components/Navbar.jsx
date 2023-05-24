@@ -8,7 +8,10 @@ function Navbar() {
           <h4>Garden Recovery Home</h4>
         </Link>
         <Link to='/list'>
-          <h4>Add/Edit Products</h4>
+          <h4>Edit Products</h4>
+        </Link>
+        <Link to='/add'>
+          <h4>Add Products</h4>
         </Link>
       </div>
     </header>

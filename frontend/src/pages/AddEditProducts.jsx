@@ -29,7 +29,6 @@ function AddEditProducts() {
             <ProductDetails key={product._id} product={product} />
           ))}
       </div>
-      <ProductForm />
     </div>
   )
 }

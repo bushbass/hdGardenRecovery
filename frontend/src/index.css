@@ -41,6 +41,10 @@ header a {
 .list-all {
   display: flex;
 }
+.sortingNav {
+  display: flex;
+  justify-content: space-between;
+}
 .product-details {
   background: #fff;
   border-radius: 4px;

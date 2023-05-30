@@ -28,6 +28,13 @@ function ListAll() {
       setFilteredProducts(products)
       return
     }
+    if(category==='needed'){
+      let newProducts = products.filter(
+        (product) => product.quantity > 0
+      )
+      setFilteredProducts(newProducts)
+      return
+    }
     let newProducts = products.filter(
       (product) => product.category.toLowerCase() === category
     )
@@ -49,6 +56,11 @@ function ListAll() {
       ) : (
         <div className='products'>
           <div className='sortingNav'>
+            <div
+              onClick={() => productFilter('needed')}
+              className='categoryChoice'>
+              Needed
+            </div>
             <div
               onClick={() => productFilter('all')}
               className='categoryChoice'>

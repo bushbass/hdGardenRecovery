@@ -20,6 +20,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
+      <a href="#top">Back to top of page</a>
     </div>
   );
 }

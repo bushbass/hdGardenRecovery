@@ -46,6 +46,7 @@ header a {
 .sortingNav {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .products {
   width: 90vw;
@@ -138,6 +139,7 @@ form button {
   font-family: 'Poppins';
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 div.error {
   padding: 10px;

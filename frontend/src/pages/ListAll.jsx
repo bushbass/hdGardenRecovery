@@ -1,48 +1,46 @@
-import { useEffect, useState } from 'react'
-import { useProductsContext } from '../hooks/useProductsContext'
-import ListAllProductDetails from '../components/ListAllProductDetails'
+import { useEffect, useState } from 'react';
+import { useProductsContext } from '../hooks/useProductsContext';
+import ListAllProductDetails from '../components/ListAllProductDetails';
 
 function ListAll() {
-  const { products, dispatch } = useProductsContext()
+  const { products, dispatch } = useProductsContext();
 
-  const [loading, setLoading] = useState(true)
-  const [filteredProducts, setFilteredProducts] = useState(products)
+  const [loading, setLoading] = useState(true);
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch(process.env.REACT_APP_BACKEND_URL)
-      const json = await response.json()
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL);
+      const json = await response.json();
 
       if (response.ok) {
-        dispatch({ type: 'SET_PRODUCTS', payload: json })
+        dispatch({ type: 'SET_PRODUCTS', payload: json });
       }
-      setLoading(false)
-      setFilteredProducts(json)
-    }
+      setLoading(false);
+      setFilteredProducts(json);
+    };
 
-    fetchProducts()
-  }, [dispatch])
+    fetchProducts();
+  }, [dispatch]);
 
   const productFilter = (category) => {
     if (category === 'all') {
-      setFilteredProducts(products)
-      return
+      setFilteredProducts(products);
+      return;
     }
-    if(category==='needed'){
-      let newProducts = products.filter(
-        (product) => product.quantity > 0
-      )
-      setFilteredProducts(newProducts)
-      return
+    if (category === 'needed') {
+      let newProducts = products.filter((product) => product.quantity > 0);
+      setFilteredProducts(newProducts);
+      return;
     }
     let newProducts = products.filter(
       (product) => product.category.toLowerCase() === category
-    )
-    setFilteredProducts(newProducts)
-  }
+    );
+    setFilteredProducts(newProducts);
+  };
 
   return (
-    <div className='list-all'>
+    <div className="list-all">
       {loading ? (
         <>
           <h3>
@@ -54,36 +52,42 @@ function ListAll() {
           </h3>
         </>
       ) : (
-        <div className='products'>
-          <div className='sortingNav'>
+        <div className="products">
+          <div className="sortingNav">
             <div
               onClick={() => productFilter('needed')}
-              className='categoryChoice'>
+              className="categoryChoice"
+            >
               Needed
             </div>
             <div
               onClick={() => productFilter('all')}
-              className='categoryChoice'>
+              className="categoryChoice"
+            >
               All products
             </div>
             <div
               onClick={() => productFilter('soil')}
-              className='categoryChoice'>
+              className="categoryChoice"
+            >
               Soil
             </div>
             <div
               onClick={() => productFilter('mulch')}
-              className='categoryChoice'>
+              className="categoryChoice"
+            >
               Mulch
             </div>
             <div
               onClick={() => productFilter('stone')}
-              className='categoryChoice'>
+              className="categoryChoice"
+            >
               Stone
             </div>
             <div
               onClick={() => productFilter('paver')}
-              className='categoryChoice'>
+              className="categoryChoice"
+            >
               Pavers
             </div>
           </div>
@@ -94,7 +98,7 @@ function ListAll() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default ListAll
+export default ListAll;

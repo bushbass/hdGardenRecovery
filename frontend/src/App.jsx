@@ -20,7 +20,9 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
-      <a href="#top">Back to top of page</a>
+      <div className="back-to-top-link">
+        <a href="#top">Back to top of page</a>
+      </div>
     </div>
   );
 }

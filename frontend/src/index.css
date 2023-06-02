@@ -106,10 +106,15 @@ header a {
 }
 .back-to-top-link {
   text-align: center;
-  margin-bottom: 10px;
+  margin: 0 30px 10px 30px;
+  border: 3px solid var(--primary);
+  background-color: white;
+  border-radius: 5px;
 }
 .back-to-top-link > a {
   text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--primary);
 }
 /* new product form */
 label,

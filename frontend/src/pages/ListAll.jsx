@@ -7,6 +7,7 @@ function ListAll() {
 
   const [loading, setLoading] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState(products);
+  const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -21,7 +22,14 @@ function ListAll() {
     };
 
     fetchProducts();
-  }, [dispatch]);
+  }, [dispatch, toggle]);
+
+  const resetAll = async () => {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}reset`);
+    console.log(response);
+    setToggle(!toggle);
+    console.log(toggle);
+  };
 
   const productFilter = (category) => {
     if (category === 'all') {
@@ -55,12 +63,6 @@ function ListAll() {
         <div className="products">
           <div className="sortingNav">
             <div
-              onClick={() => productFilter('needed')}
-              className="categoryChoice"
-            >
-              Needed
-            </div>
-            <div
               onClick={() => productFilter('all')}
               className="categoryChoice"
             >
@@ -89,6 +91,15 @@ function ListAll() {
               className="categoryChoice"
             >
               Pavers
+            </div>
+            <div
+              onClick={() => productFilter('needed')}
+              className="categoryChoice"
+            >
+              Needed
+            </div>
+            <div onClick={resetAll} className="categoryChoice">
+              Reset All
             </div>
           </div>
           {filteredProducts &&

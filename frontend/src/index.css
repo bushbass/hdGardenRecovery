@@ -6,6 +6,10 @@
   --primary: #ff8812;
   --error: #e7195a;
 }
+.App {
+  max-width: 768px;
+  margin: 0 auto;
+}
 body {
   background: #cbcbcb;
   margin: 0;
@@ -15,7 +19,6 @@ header {
   background: #fff;
 }
 header .container {
-  max-width: 1400px;
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
@@ -27,7 +30,6 @@ header a {
   text-decoration: none;
 }
 .pages {
-  max-width: 1400px;
   padding: 8px;
   margin: 0 auto;
 }

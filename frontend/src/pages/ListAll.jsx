@@ -52,7 +52,7 @@ function ListAll() {
       {loading ? (
         <>
           <h3>
-            The database for this app runs on a free server that goes to sleep
+            This app runs on a free server that goes to sleep
             after periods of inactivity
             <br />
             If you're seeing this message, please wait a minute to let the

@@ -29,6 +29,9 @@ header a {
   color: #333;
   text-decoration: none;
 }
+.categoryChoice{
+  cursor: pointer;
+}
 .pages {
   padding: 8px;
   margin: 0 auto;
@@ -64,6 +67,10 @@ header a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+}
+.product-details a {
+  text-decoration: none;
 }
 .edit-page {
   flex-direction: column;

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProductsContext } from '../hooks/useProductsContext';
+import { Link } from 'react-router-dom'
 
 function ListAllProductDetails({ product }) {
   const { dispatch, products } = useProductsContext();
@@ -68,7 +69,10 @@ function ListAllProductDetails({ product }) {
 
   return (
     <div className="product-details">
+      <Link to='/edit/' state={{ id: product._id }}>
+          
       <p className="product-details-title">{product.title}</p>
+        </Link>
       <p className="product-details-properties">
         {products.find((product) => product._id === id).quantity}{' '}
         <button onClick={increment}>+</button>{' '}

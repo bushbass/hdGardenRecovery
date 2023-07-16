@@ -1,5 +1,5 @@
-const express = require('express');
-const cors = require('cors');
+const express = require('express')
+const cors = require('cors')
 const {
   getProducts,
   getProduct,
@@ -7,25 +7,29 @@ const {
   deleteProduct,
   updateProduct,
   resetAllQuantities,
-} = require('../controllers/productController');
-const router = express.Router();
+  getNeeded,
+} = require('../controllers/productController')
+const router = express.Router()
 
 // get all products
-router.get('/', getProducts);
+router.get('/', getProducts)
+
+// get only needed products
+router.get('/needed', getNeeded)
 
 // update RESET all quantities to zero
-router.get('/reset', resetAllQuantities);
+router.get('/reset', resetAllQuantities)
 
 // get one product
-router.get('/:id', getProduct);
+router.get('/:id', getProduct)
 
 // POST create a new product
-router.post('/', createProduct);
+router.post('/', createProduct)
 
 // DELETE a product
-router.delete('/:id', deleteProduct);
+router.delete('/:id', deleteProduct)
 
 // UPDATE a product
-router.put('/:id', updateProduct);
+router.put('/:id', updateProduct)
 
-module.exports = router;
+module.exports = router
